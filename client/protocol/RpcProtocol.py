@@ -2,14 +2,19 @@
 
 
 
+"""
+{}
+序列话
+"""
+
 class RpcProtocol(object):
     def __init__(self):
         self.CMD_CREATE_USER = 1
-        self.version = ""
-        self.cmd = ""
-        self.magicNum = ""
-        self.boylen = ""
-        self.body = ""
+        self.version = int()
+        self.cmd = int()
+        self.magicNum = int()
+        self.boylen = 0
+        self.body = {}
         self.HEAD_LEN = 16
 
 
@@ -39,5 +44,10 @@ class RpcProtocol(object):
 
 
 
+    def generateByteArray(self):
+        data = self.HEAD_LEN + self.boylen
+        index = 0
+
 if __name__  == '__main__':
     a = RpcProtocol()
+    print(a.version)
